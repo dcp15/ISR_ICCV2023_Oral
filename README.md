@@ -35,4 +35,4 @@ model.load_state_dict(ckpt['model'])
 ```
 
 ## Visualization demo
-![](visualization_demo.mp4)
+https://user-images.githubusercontent.com/19770225/261253500-0ec4cb8e-8543-441b-b852-34c6a1ba2587.mp4
