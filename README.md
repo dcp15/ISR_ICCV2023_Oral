@@ -33,3 +33,6 @@ model = SwinTransformer(num_features=512)
 ckpt = torch.load(ckpt_path)
 model.load_state_dict(ckpt['model'])
 ```
+
+## Visualization demo
+![](visualization_demo.mp4)
