@@ -35,4 +35,4 @@ model.load_state_dict(ckpt['model'])
 ```
 
 ## Visualization demo
-！[image](https://github.com/dcp15/ISR_ICCV2023_Oral/blob/main/demo/demo-v1.gif)
+![image](https://github.com/dcp15/ISR_ICCV2023_Oral/blob/main/demo/demo-v1.gif)
