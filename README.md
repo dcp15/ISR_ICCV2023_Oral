@@ -2,7 +2,7 @@
 [ICCV2023 Oral] Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification. [arxiv](https://arxiv.org/pdf/2308.08887.pdf)
 
 ## Update
-2023-08-15: Update the trained model; The other code is comming soon.
+2023-08-15: Update the trained model; The other code is coming soon.
 
 ## Trained model
 Swin-Transformer---[swin_base_patch4_window7_224.pth](https://drive.google.com/file/d/1Lb-oxhUSU38fNAucBBqIpRi2eQUjTXnP/view?usp=sharing)
