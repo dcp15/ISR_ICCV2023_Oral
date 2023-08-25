@@ -1,4 +1,4 @@
-# ISR
+# ISR_ICCV2023_Oral
 [ICCV2023 Oral] Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification. [arxiv](https://arxiv.org/pdf/2308.08887.pdf)
 
 ## Update
