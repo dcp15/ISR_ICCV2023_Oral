@@ -2,8 +2,11 @@
 **[ICCV2023 Oral] Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification.**
 
 [[ArXiv](https://arxiv.org/pdf/2308.08887.pdf)] [[Demo](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=hPiYsyp-hZbb)][![Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=hPiYsyp-hZbb)
+<p align="center"> <img src="./demo/ISR.JPG" width="500"/> 
 
 ISR is a domain-generalizable person ReID model. It is trained with 47.8M person images extracted from 7.4K video clips in an unsupervised manner. ISR can not only be tested directly in unknown domains, but also can quickly adapt to new enviroments, showing good domain generalization and domain adaptation capabilities. Therefore, ISR has a more substantial potential for real-world applications.
+
+
 
 ## Update
 2023-08-15: Update the trained model; The other code is coming soon.
