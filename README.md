@@ -6,16 +6,26 @@
 
 ISR is a domain-generalizable person ReID model. It is trained with 47.8M person images extracted from 7.4K video clips in an unsupervised manner. ISR can not only be tested directly in unknown domains, but also can quickly adapt to new enviroments, showing good domain generalization and domain adaptation capabilities. Therefore, ISR has a more substantial potential for real-world applications.
 
+## Installation
++ ubuntu 20.04
++ python 3.8.13
++ pytorch 1.8.0
++ torchvision 0.9.0
++ timm 0.4.12
 
+## Trained model weight
+Swin-Transformer---[swin_base_patch4_window7_224.pth](https://cloud.tsinghua.edu.cn/f/facfc952bee74940b106/?dl=1)
 
-## Update
-2023-08-15: Update the trained model; The other code is coming soon.
+## [Demo A] Pedestrian image 1:1 verification
+You can input a pair of cropped pedestrian images and the ISR model outputs their similairty score in range 0 to 1, larger scores mean more similar pairs. **Try pedestrian images from diverse domains to see the generalization ability of our model!**
 
-## Trained model
-Swin-Transformer---[swin_base_patch4_window7_224.pth](https://drive.google.com/file/d/1fB-5SaaUf3ZVnnSkQAVhBE3VAJ6u9e0w/view?usp=sharing)
+You can run Demo A in our colab. [![Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=hPiYsyp-hZbb)
 
-## Demo
-The demo has been uploaded to [colab](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=-r1xlWpD0w5E)
+Here, we also provide a command line code for 1:1 verification
+```python'''
+python demo_A.py --model-weight /path/to/model/weight --image1 /path/to/image1  --image2 /path/to/image2
+```
+
 
 ## Evaluation
 Download the trained weight, and then load it:
