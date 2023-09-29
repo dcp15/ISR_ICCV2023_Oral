@@ -25,6 +25,8 @@ Here, we also provide a command line code for 1:1 verification
 ```python'''
 python demo_A.py --model-weight /path/to/model/weight --image1 /path/to/image1  --image2 /path/to/image2
 ```
+**Examples**
+
 
 
 ## Evaluation
