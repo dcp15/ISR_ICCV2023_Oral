@@ -40,12 +40,12 @@ You can run Demo B in our colab. [![Demo In Colab](https://colab.research.google
 **Examples of 1:(1+N) Verification**
 We randomly selected some positive pairs from different domains (including airport lounges, movies, streets, and generated cartoons) and conducted retrieval according to our 1:N+1 experimental setting. As you can see, the retrieval results are very good. You can expand the gallery set and try more positive pairs for wider experiments.
 
-<p align="center"> <img src="./demo/demoB.JPG" width="800"/> 
+<p align="center"> <img src="./demo/demoB.JPG" width="600"/> 
 
 
 ## Attention Map
 Even without any identity and foreground labels, ISR can foucs on the region of pedestrians! 
-<p align="center"> <img src="./demo/attention_map.JPG" width="800"/> 
+<p align="center"> <img src="./demo/attention_map.JPG" width="600"/> 
 
 
 
