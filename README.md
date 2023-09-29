@@ -43,6 +43,18 @@ We randomly selected some positive pairs from different domains (including airpo
 <p align="center"> <img src="./demo/demoB.JPG" width="800"/> 
 
 
-## Visualization demo
+## Attention Map
 Even without any identity and foreground labels, ISR can foucs on the region of pedestrians! 
 <p align="center"> <img src="./demo/attention_map.JPG" width="800"/> 
+
+
+
+## Citation
+```
+@article{dou2023identity,
+  title={Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification},
+  author={Dou, Zhaopeng and Wang, Zhongdao and Li, Yali and Wang, Shengjin},
+  journal={arXiv preprint arXiv:2308.08887},
+  year={2023}
+}
+```
