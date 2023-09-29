@@ -13,7 +13,7 @@ ISR is a domain-generalizable person ReID model. It is trained with 47.8M person
 + torchvision 0.9.0
 + timm 0.4.12
 
-## Trained model weight
+## Model weight
 Swin-Transformer---[swin_base_patch4_window7_224.pth](https://cloud.tsinghua.edu.cn/f/facfc952bee74940b106/?dl=1)
 
 ## [Demo A] Pedestrian image 1:1 verification
@@ -40,8 +40,9 @@ You can run Demo B in our colab. [![Demo In Colab](https://colab.research.google
 **Examples of 1:(1+N) Verification**
 We randomly selected some positive pairs from different domains (including airport lounges, movies, streets, and generated cartoons) and conducted retrieval according to our 1:N+1 experimental setting. As you can see, the retrieval results are very good. You can expand the gallery set and try more positive pairs for wider experiments.
 
-<p align="center"> <img src="./demo/demoA.JPG" width="800"/> 
+<p align="center"> <img src="./demo/demoB.JPG" width="800"/> 
 
 
 ## Visualization demo
-![Alt Text](https://github.com/dcp15/ISR_ICCV2023_Oral/blob/main/demo/demo-v1.gif)
+Even without any identity and foreground labels, ISR can foucs on the region of pedestrians! 
+<p align="center"> <img src="./demo/attention_map.JPG" width="800"/> 
