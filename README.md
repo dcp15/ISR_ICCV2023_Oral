@@ -17,7 +17,7 @@ ISR is a domain-generalizable person ReID model. It is trained with 47.8M person
 Swin-Transformer---[swin_base_patch4_window7_224.pth](https://cloud.tsinghua.edu.cn/f/facfc952bee74940b106/?dl=1)
 
 ## [Demo A] Pedestrian image 1:1 verification
-You can input a pair of cropped pedestrian images and the ISR model outputs their similairty score in range 0 to 1, larger scores mean more similar pairs. **Try pedestrian images from diverse domains to see the generalization ability of our model!**
+You can input a pair of cropped pedestrian images and the ISR model outputs their similairty score in range -1 to 1, larger scores mean more similar pairs. **Try pedestrian images from diverse domains to see the generalization ability of our model!**
 
 You can run Demo A in our colab. [![Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=hPiYsyp-hZbb)
 
@@ -25,61 +25,23 @@ Here, we also provide a command line code for 1:1 verification
 ```python'''
 python demo_A.py --model-weight /path/to/model/weight --image1 /path/to/image1  --image2 /path/to/image2
 ```
-**Examples**
+**Examples of 1:1 Verification**
+It can be seen that even if the sample pairs come from diverse domains, the similarity between two samples within a positive pair is much larger than the similarity between two samples within a negative pair, which illustrates the generalization of ISR! 
 
+<p align="center"> <img src="./demo/demoA.JPG" width="800"/> 
 
+## [Demo B] Pedestrian  image 1:(1+N) retrieval
+We provide a diverse gallery set with N=2000 random pedestrian images. In this demo, you can upload two images from a same identity (a positive pair). We use one of them as the query, and the other one is mixed into the gallery.  Top-10  gallery samples that the model predicts are most similar to the query will be shown. See if the true possitive one is among the Top-10. **Try pedestrian images from diverse domains to see the generalization ability of our model!**
 
-## Evaluation
-Download the trained weight, and then load it:
-```python'''
-import torch
-import torch.nn as nn
-import timm
+You can run Demo B in our colab. [![Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MqEJ_O-e753N9NEVkvYcMZmlHlIWgcv6#scrollTo=hPiYsyp-hZbb)
 
-import torch
-import torch.nn as nn
-import timm
-from torchvision import transforms as Transforms
-from PIL import Image
-import torch.nn.functional as F
-import os
+*   The gallery set:  [[images]](https://cloud.tsinghua.edu.cn/f/458822c607ef460d823b/?dl=1) [[extracted features]](https://cloud.tsinghua.edu.cn/f/49dd2900fc8b42fbae28/?dl=1)
 
+**Examples of 1:(1+N) Verification**
+We randomly selected some positive pairs from different domains (including airport lounges, movies, streets, and generated cartoons) and conducted retrieval according to our 1:N+1 experimental setting. As you can see, the retrieval results are very good. You can expand the gallery set and try more positive pairs for wider experiments.
 
-class SwinTransformer(nn.Module):
+<p align="center"> <img src="./demo/demoA.JPG" width="800"/> 
 
-    def __init__(self, num_features=512):
-        super(SwinTransformer, self).__init__()
-        self.model = timm.create_model('swin_base_patch4_window7_224')
-        self.num_features = num_features
-        self.feat = nn.Linear(1024, num_features) if num_features > 0 else None
-
-    def forward(self, x):
-        x = self.model.forward_features(x)
-        if not self.feat is None:
-            x = self.feat(x)
-        return x
-
-
-class Data_Processor(object):
-    def __init__(self, height, width):
-        self.height = height
-        self.width = width
-        self.transformer = Transforms.Compose([
-            Transforms.Resize((self.height, self.width)),
-            Transforms.ToTensor(),
-            Transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-        ])
-
-    def __call__(self, img):
-        return self.transformer(img).unsqueeze(0)
-
-data_processor = Data_Processor(height=224, width=224)
-
-ckpt = './swin_base_patch4_window7_224.pth'  # The path of the trained weight
-ckpt = torch.load(ckpt_path)
-model = SwinTransformer(num_features=512).cuda()
-model.load_state_dict(ckpt['state_dict'], strict=True)
-```
 
 ## Visualization demo
 ![Alt Text](https://github.com/dcp15/ISR_ICCV2023_Oral/blob/main/demo/demo-v1.gif)
