@@ -51,10 +51,12 @@ Even without any identity and foreground labels, ISR can foucs on the region of 
 
 ## Citation
 ```
-@article{dou2023identity,
-  title={Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification},
-  author={Dou, Zhaopeng and Wang, Zhongdao and Li, Yali and Wang, Shengjin},
-  journal={arXiv preprint arXiv:2308.08887},
-  year={2023}
+@InProceedings{Dou_2023_ICCV,
+    author    = {Dou, Zhaopeng and Wang, Zhongdao and Li, Yali and Wang, Shengjin},
+    title     = {Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-Identification},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {15847-15858}
 }
 ```
